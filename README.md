@@ -16,6 +16,10 @@ For this project, build a Firebase-backed application where users can upload and
 - [Firebase - Cloud Firestore](https://firebase.google.com/docs/firestore)
 - [Firebase - Storage](https://firebase.google.com/docs/storage)
 
+## Rubric
+
+![rubric](./firebaseProjectRubric.png)
+
 ## UI
 
 You are free to design the UI for it, but the following wireframes provide a rough sketch of the desired screens:
