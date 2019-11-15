@@ -22,9 +22,6 @@ You are free to design the UI for it, but the following wireframes provide a rou
 
 ### Login View Controller
 
-
-<img src="./loginVC.png" alt="loginVC" width="500" height="800">
-
 ![loginVC](./loginVC.png)
 
 ### Profile View Controller
