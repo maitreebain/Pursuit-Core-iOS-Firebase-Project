@@ -68,6 +68,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wvc-Ch-8P5"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="nkw-Hq-qMQ" id="Uks-bS-cR4"/>
+                        <outlet property="passwordTextField" destination="DcL-dl-Mlj" id="eGt-x0-QAv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmQ-Hw-nGc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
