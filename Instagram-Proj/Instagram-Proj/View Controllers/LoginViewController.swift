@@ -14,15 +14,56 @@ enum AccountState {
 }
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    private var accountState = AccountState.existingUser
+    
+    private var authSession = AuthenticationSession()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+            DispatchQueue.main.async {
+                self.showAlert(title: "Missing Fields", message: "Please enter your e-mail/password")
+            }
+            return
+        }
+        
+        //call email/pass func here
+    }
     
-
+    private func continueLogin(email: String, password: String) {
+        if accountState == .existingUser {
+            authSession.signExistingUser(email: email, password: password) { (result) in
+                switch result{
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.showAlert(title: "Error logging in", message: "\(error.localizedDescription)")
+                    }
+                case .success:
+                    DispatchQueue.main.async {
+                        //TODO: navigate to the main view
+                        
+                    }
+                }
+            }
+        } else {
+            authSession.createNewUser(email: email, password: password) { (result) in
+                
+                switch result{
+                case .failure(let error):
+                    
+                }
+            }
+        }
+        
+        
+    }
+    
 }

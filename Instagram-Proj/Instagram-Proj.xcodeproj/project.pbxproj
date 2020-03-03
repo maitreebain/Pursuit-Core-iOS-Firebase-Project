@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8026A4B9240F0CEE00E1C888 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026A4B8240F0CEE00E1C888 /* AuthenticationSession.swift */; };
+		8026A4BB240F144700E1C888 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026A4BA240F144700E1C888 /* UIViewController+Alerts.swift */; };
 		8029DF0B240EF4F800753ADF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029DF0A240EF4F800753ADF /* ProfileViewController.swift */; };
 		8029DF0D240EF52D00753ADF /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029DF0C240EF52D00753ADF /* ImagesViewController.swift */; };
 		8029DF0F240EF54500753ADF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029DF0E240EF54500753ADF /* LoginViewController.swift */; };
@@ -46,6 +47,7 @@
 		5B68EB0B167340173A92EFC9 /* Pods_Instagram_ProjTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram_ProjTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6555D7244326C1DFA4F9FBD1 /* Pods-Instagram-ProjTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-ProjTests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram-ProjTests/Pods-Instagram-ProjTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8026A4B8240F0CEE00E1C888 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
+		8026A4BA240F144700E1C888 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		8029DF0A240EF4F800753ADF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8029DF0C240EF52D00753ADF /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
 		8029DF0E240EF54500753ADF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				80868E12240EF3AC001081C4 /* PostsViewController.swift */,
 				8029DF0C240EF52D00753ADF /* ImagesViewController.swift */,
 				8029DF1D240F0A7E00753ADF /* UIViewControllers+Navigation.swift */,
+				8026A4BA240F144700E1C888 /* UIViewController+Alerts.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				8029DF14240EF5CB00753ADF /* ImagesView.swift in Sources */,
 				8029DF1B240F072000753ADF /* DesignableView.swift in Sources */,
 				8029DF0D240EF52D00753ADF /* ImagesViewController.swift in Sources */,
+				8026A4BB240F144700E1C888 /* UIViewController+Alerts.swift in Sources */,
 				80868E0A240EF29D001081C4 /* TabViewController.swift in Sources */,
 				804E08F4240EEAA200694496 /* AppDelegate.swift in Sources */,
 				8029DF0B240EF4F800753ADF /* ProfileViewController.swift in Sources */,
