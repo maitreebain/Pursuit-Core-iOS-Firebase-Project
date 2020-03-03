@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import FirebaseAuth
 
 class AuthenticationSession {
@@ -20,7 +19,6 @@ class AuthenticationSession {
             } else if let authDataResult = authDataResult {
                 completion(.success(authDataResult))
             }
-            
         }
     }
     

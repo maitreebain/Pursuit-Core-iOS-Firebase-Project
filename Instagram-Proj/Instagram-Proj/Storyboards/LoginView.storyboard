@@ -53,11 +53,33 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRT-fh-7On">
+                                <rect key="frame" x="60" y="650" width="203" height="22"/>
+                                <fontDescription key="fontDescription" name="Charter-Roman" family="Charter" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwE-tU-vvV" customClass="DesignableButton" customModule="Instagram_Proj" customModuleProvider="target">
+                                <rect key="frame" x="271" y="646" width="83" height="30"/>
+                                <color key="backgroundColor" red="0.58596866560000005" green="0.8469573641" blue="0.69335813049999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="vRT-fh-7On" firstAttribute="leading" secondItem="dIU-2f-HaH" secondAttribute="leading" id="83A-wp-vqh"/>
+                            <constraint firstItem="vRT-fh-7On" firstAttribute="top" secondItem="bjz-QX-Flm" secondAttribute="bottom" constant="60" id="8Qc-Dc-0pa"/>
+                            <constraint firstItem="PwE-tU-vvV" firstAttribute="leading" secondItem="vRT-fh-7On" secondAttribute="trailing" constant="8" id="E7c-G4-cJt"/>
                             <constraint firstItem="bjz-QX-Flm" firstAttribute="centerX" secondItem="UDs-mi-2sT" secondAttribute="centerX" id="Jda-z6-Pym"/>
                             <constraint firstItem="bjz-QX-Flm" firstAttribute="top" secondItem="dIU-2f-HaH" secondAttribute="bottom" constant="60" id="L3V-nS-Pdf"/>
+                            <constraint firstItem="PwE-tU-vvV" firstAttribute="width" secondItem="Wvc-Ch-8P5" secondAttribute="width" multiplier="0.2" id="Odk-bK-krI"/>
                             <constraint firstItem="S8X-wB-W8i" firstAttribute="top" secondItem="Wvc-Ch-8P5" secondAttribute="top" constant="200" id="Up8-X4-lWr"/>
                             <constraint firstItem="Wvc-Ch-8P5" firstAttribute="trailing" secondItem="dIU-2f-HaH" secondAttribute="trailing" constant="60" id="Vx9-Bs-AiD"/>
                             <constraint firstItem="Wvc-Ch-8P5" firstAttribute="trailing" secondItem="S8X-wB-W8i" secondAttribute="trailing" constant="20" id="b6z-rZ-CPl"/>
@@ -65,6 +87,8 @@
                             <constraint firstItem="bjz-QX-Flm" firstAttribute="width" secondItem="Wvc-Ch-8P5" secondAttribute="width" multiplier="0.3" id="nQK-Hk-DMY"/>
                             <constraint firstItem="dIU-2f-HaH" firstAttribute="centerY" secondItem="UDs-mi-2sT" secondAttribute="centerY" id="ovh-iI-WID"/>
                             <constraint firstItem="dIU-2f-HaH" firstAttribute="leading" secondItem="Wvc-Ch-8P5" secondAttribute="leading" constant="60" id="pgw-bp-ELO"/>
+                            <constraint firstItem="Wvc-Ch-8P5" firstAttribute="bottom" secondItem="PwE-tU-vvV" secondAttribute="bottom" constant="186" id="uJf-eT-4yf"/>
+                            <constraint firstItem="PwE-tU-vvV" firstAttribute="trailing" secondItem="dIU-2f-HaH" secondAttribute="trailing" id="wmQ-6m-oRy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wvc-Ch-8P5"/>
                     </view>
