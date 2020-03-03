@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n6J-WB-3KN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="Pxx-z1-bqE">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="n6J-WB-3KN" customClass="LoginViewController" customModule="Instagram_Proj" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UDs-mi-2sT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="3ce-t6-Apl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MaiGram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8X-wB-W8i">
+                                <rect key="frame" x="20" y="244" width="374" height="60"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Bold" family="Bodoni 72 Oldstyle" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dIU-2f-HaH">
+                                <rect key="frame" x="60" y="404" width="294" height="88"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter e-mail/username here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nkw-Hq-qMQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DcL-dl-Mlj">
+                                        <rect key="frame" x="0.0" y="54" width="294" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjz-QX-Flm" customClass="DesignableButton" customModule="Instagram_Proj" customModuleProvider="target">
+                                <rect key="frame" x="145" y="552" width="124" height="38"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="22"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bjz-QX-Flm" firstAttribute="centerX" secondItem="UDs-mi-2sT" secondAttribute="centerX" id="Jda-z6-Pym"/>
+                            <constraint firstItem="bjz-QX-Flm" firstAttribute="top" secondItem="dIU-2f-HaH" secondAttribute="bottom" constant="60" id="L3V-nS-Pdf"/>
+                            <constraint firstItem="S8X-wB-W8i" firstAttribute="top" secondItem="Wvc-Ch-8P5" secondAttribute="top" constant="200" id="Up8-X4-lWr"/>
+                            <constraint firstItem="Wvc-Ch-8P5" firstAttribute="trailing" secondItem="dIU-2f-HaH" secondAttribute="trailing" constant="60" id="Vx9-Bs-AiD"/>
+                            <constraint firstItem="Wvc-Ch-8P5" firstAttribute="trailing" secondItem="S8X-wB-W8i" secondAttribute="trailing" constant="20" id="b6z-rZ-CPl"/>
+                            <constraint firstItem="S8X-wB-W8i" firstAttribute="leading" secondItem="Wvc-Ch-8P5" secondAttribute="leading" constant="20" id="mau-uD-hEf"/>
+                            <constraint firstItem="bjz-QX-Flm" firstAttribute="width" secondItem="Wvc-Ch-8P5" secondAttribute="width" multiplier="0.3" id="nQK-Hk-DMY"/>
+                            <constraint firstItem="dIU-2f-HaH" firstAttribute="centerY" secondItem="UDs-mi-2sT" secondAttribute="centerY" id="ovh-iI-WID"/>
+                            <constraint firstItem="dIU-2f-HaH" firstAttribute="leading" secondItem="Wvc-Ch-8P5" secondAttribute="leading" constant="60" id="pgw-bp-ELO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wvc-Ch-8P5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GmQ-Hw-nGc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.7971014492753632" y="85.714285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Launch" width="480" height="275"/>
+    </resources>
+</document>

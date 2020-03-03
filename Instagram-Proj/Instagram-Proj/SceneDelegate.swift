@@ -22,6 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         //if let current user stuff
+        let storyboard = UIStoryboard.init(name: "LoginView", bundle: nil)
+        guard let loginVC = storyboard.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else { return }
+        window?.rootViewController = loginVC
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
