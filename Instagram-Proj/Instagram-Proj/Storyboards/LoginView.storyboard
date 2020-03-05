@@ -73,6 +73,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="toggleAccountPressed:" destination="n6J-WB-3KN" eventType="touchUpInside" id="6xB-dj-fIz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -96,8 +99,11 @@
                         <viewLayoutGuide key="safeArea" id="Wvc-Ch-8P5"/>
                     </view>
                     <connections>
+                        <outlet property="accountActivateButton" destination="bjz-QX-Flm" id="n5K-Bg-KmY"/>
                         <outlet property="emailTextField" destination="nkw-Hq-qMQ" id="Uks-bS-cR4"/>
                         <outlet property="passwordTextField" destination="DcL-dl-Mlj" id="eGt-x0-QAv"/>
+                        <outlet property="userAccountPromptButton" destination="PwE-tU-vvV" id="M7r-CB-uYf"/>
+                        <outlet property="userPrompt" destination="vRT-fh-7On" id="ML2-2F-7sj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmQ-Hw-nGc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
