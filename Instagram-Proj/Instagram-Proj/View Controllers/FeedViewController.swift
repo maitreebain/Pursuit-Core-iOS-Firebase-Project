@@ -1,16 +1,14 @@
 //
-//  ProfileViewController.swift
+//  FeedViewController.swift
 //  Instagram-Proj
 //
-//  Created by Maitree Bain on 3/3/20.
+//  Created by Maitree Bain on 3/4/20.
 //  Copyright © 2020 Maitree Bain. All rights reserved.
 //
 
 import UIKit
 
-//optional vc
-
-class ProfileViewController: UIViewController {
+class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

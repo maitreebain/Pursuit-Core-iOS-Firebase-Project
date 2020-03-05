@@ -8,6 +8,5 @@
 
 import UIKit
 
-class PostsViewController: UIViewController {
-
+class UserViewController: UIViewController {
 }
