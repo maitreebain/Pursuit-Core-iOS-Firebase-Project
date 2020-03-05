@@ -18,13 +18,17 @@ class ProfileView: UIView {
     
     public lazy var updateProfButton: UIButton = {
         let button = UIButton()
-        button.titleLabel?.text = "Update Profile"
+        button.setTitle("Update Profile", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
         return button
     }()
     
     public lazy var userName: UITextField = {
         let text = UITextField()
         text.placeholder = "Enter a display name"
+        text.textAlignment = .center
+        text.backgroundColor = .white
+        text.layer.cornerRadius = 10
         return text
     }()
     
@@ -36,16 +40,17 @@ class ProfileView: UIView {
     
     public lazy var bioText: UITextView = {
         let tv = UITextView()
+        tv.text = "bio"
+        tv.layer.cornerRadius = 10
         return tv
     }()
     
     public lazy var signOutButton: UIButton = {
         let button = UIButton()
-        button.titleLabel?.text = "Sign Out"
+        button.setTitle("Sign Out", for: .normal)
+        button.setTitleColor(.systemRed, for: .normal)
         return button
     }()
-    
-    
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -60,6 +65,10 @@ class ProfileView: UIView {
     private func commonInit() {
         setUpUserImageConstraints()
         setUpUserNameConstraints()
+        setUpUpdateButtonConstraints()
+        setUpEmailLabelConstraints()
+        setUpBioTextConstraints()
+        setUpSignOutButtonConstraints()
     }
     
     private func setUpUserImageConstraints() {
@@ -82,10 +91,61 @@ class ProfileView: UIView {
         
         NSLayoutConstraint.activate([
             userName.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            userName.leadingAnchor.constraint(equalTo: userImage.trailingAnchor),
-            userName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20),
+            userName.leadingAnchor.constraint(equalTo: userImage.trailingAnchor, constant: 8),
+            userName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             userName.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
     
+    private func setUpUpdateButtonConstraints() {
+        addSubview(updateProfButton)
+        
+        updateProfButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            updateProfButton.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 8),
+            updateProfButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+            updateProfButton.heightAnchor.constraint(equalToConstant: 44),
+            updateProfButton.widthAnchor.constraint(equalToConstant: 120),
+            updateProfButton.centerXAnchor.constraint(equalTo: userName.centerXAnchor)
+        ])
+    }
+    
+    private func setUpEmailLabelConstraints() {
+        addSubview(emailLabel)
+        
+        emailLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            emailLabel.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: 20),
+            emailLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            emailLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+        ])
+    }
+    
+    private func setUpBioTextConstraints() {
+        addSubview(bioText)
+        
+        bioText.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            bioText.topAnchor.constraint(equalTo: emailLabel.topAnchor, constant: 60),
+            bioText.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            bioText.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            bioText.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2)
+        ])
+    }
+    
+    private func setUpSignOutButtonConstraints() {
+        addSubview(signOutButton)
+        
+        signOutButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            signOutButton.topAnchor.constraint(equalTo: bioText.bottomAnchor, constant: 20),
+            signOutButton.widthAnchor.constraint(equalToConstant: 120),
+            signOutButton.heightAnchor.constraint(equalToConstant: 44),
+            signOutButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+        ])
+    }
 }

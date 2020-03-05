@@ -21,10 +21,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        //if let current user stuff
-        let storyboard = UIStoryboard.init(name: "LoginView", bundle: nil)
-        guard let loginVC = storyboard.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else { return }
-        window?.rootViewController = loginVC
+        let mainViewController = MainViewController()
+        if let _ = Auth.auth().currentUser {
+            UIViewController.showViewController(viewController: mainViewController)
+        } else {
+            UIViewController.showViewController(storyboardName: "LoginView", viewControllerID: "LoginViewController")
+        }
         window?.makeKeyAndVisible()
     }
 

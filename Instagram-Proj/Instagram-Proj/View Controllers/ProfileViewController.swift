@@ -9,6 +9,7 @@
 import UIKit
 
 //optional vc
+//pops up when people click on edit button
 
 class ProfileViewController: UIViewController {
 
