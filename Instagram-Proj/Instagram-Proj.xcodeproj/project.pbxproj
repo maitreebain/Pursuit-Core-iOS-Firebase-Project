@@ -26,6 +26,8 @@
 		804E0922240EEEDF00694496 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804E0921240EEEDF00694496 /* GoogleService-Info.plist */; };
 		805D73FF24119A7800DC5BC4 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805D73FE24119A7800DC5BC4 /* FeedView.swift */; };
 		805D740124119D7200DC5BC4 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805D740024119D7200DC5BC4 /* FeedCell.xib */; };
+		805D74042411A90900DC5BC4 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805D74032411A90900DC5BC4 /* PostModel.swift */; };
+		805D74062411ABB500DC5BC4 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805D74052411ABB500DC5BC4 /* DatabaseService.swift */; };
 		80868E0A240EF29D001081C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80868E09240EF29D001081C4 /* MainViewController.swift */; };
 		80868E13240EF3AC001081C4 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80868E12240EF3AC001081C4 /* UserViewController.swift */; };
 		80EF51182410A98900119AB0 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF51172410A98900119AB0 /* FeedViewController.swift */; };
@@ -72,6 +74,8 @@
 		804E0921240EEEDF00694496 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		805D73FE24119A7800DC5BC4 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		805D740024119D7200DC5BC4 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		805D74032411A90900DC5BC4 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		805D74052411ABB500DC5BC4 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		80868E09240EF29D001081C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		80868E12240EF3AC001081C4 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		80EF51172410A98900119AB0 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				8026A4B8240F0CEE00E1C888 /* AuthenticationSession.swift */,
+				805D74052411ABB500DC5BC4 /* DatabaseService.swift */,
 			);
 			path = "Firebase Services";
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 		804E08F2240EEAA200694496 /* Instagram-Proj */ = {
 			isa = PBXGroup;
 			children = (
+				805D74022411A8FA00DC5BC4 /* Models */,
 				8029DF1C240F0A6800753ADF /* Firebase Services */,
 				8029DF17240EFD2900753ADF /* Storyboards */,
 				8029DF10240EF58A00753ADF /* Views+Cells */,
@@ -182,6 +188,14 @@
 				804E090C240EEAA400694496 /* Info.plist */,
 			);
 			path = "Instagram-ProjTests";
+			sourceTree = "<group>";
+		};
+		805D74022411A8FA00DC5BC4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				805D74032411A90900DC5BC4 /* PostModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		80868E08240EF25E001081C4 /* View Controllers */ = {
@@ -386,10 +400,12 @@
 				8026A4BB240F144700E1C888 /* UIViewController+Alerts.swift in Sources */,
 				80868E0A240EF29D001081C4 /* MainViewController.swift in Sources */,
 				80EF51182410A98900119AB0 /* FeedViewController.swift in Sources */,
+				805D74042411A90900DC5BC4 /* PostModel.swift in Sources */,
 				805D73FF24119A7800DC5BC4 /* FeedView.swift in Sources */,
 				804E08F4240EEAA200694496 /* AppDelegate.swift in Sources */,
 				8029DF0B240EF4F800753ADF /* ProfileViewController.swift in Sources */,
 				8029DF1E240F0A7E00753ADF /* UIViewControllers+Navigation.swift in Sources */,
+				805D74062411ABB500DC5BC4 /* DatabaseService.swift in Sources */,
 				804E08F6240EEAA200694496 /* SceneDelegate.swift in Sources */,
 				8029DF16240EFA9700753ADF /* PostsCell.swift in Sources */,
 				80868E13240EF3AC001081C4 /* UserViewController.swift in Sources */,
