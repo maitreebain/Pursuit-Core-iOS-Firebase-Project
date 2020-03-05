@@ -16,7 +16,23 @@ class DatabaseService {
     
     private let db = Firestore.firestore()
     
-    public func createUserPost(imageURL: String, description: String, displayName: String, completion: @escaping (Result<String, Error>) -> ()) {
+    public func createUserPost(description: String, displayName: String, completion: @escaping (Result<String, Error>) -> ()) {
+        guard let user = Auth.auth().currentUser else { return }
         
+        let documentRef = db.collection(DatabaseService.userPost).document()
+        
+        db.collection(DatabaseService.userPost).document(documentRef.documentID).setData([
+        "description": description,
+        "date": Timestamp(date: Date()),
+        "userName": displayName,
+        "userID": user.uid
+        ]) { (error) in
+            
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(documentRef.documentID))
+            }
+        }
     }
 }
