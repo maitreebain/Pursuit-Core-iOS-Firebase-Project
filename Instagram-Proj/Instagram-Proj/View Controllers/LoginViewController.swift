@@ -70,13 +70,9 @@ class LoginViewController: UIViewController {
     }
     
     private func navigateToMainView() {
-        //user tab bar controller here (user sees all tabs and info)
-        //instance of vc and then present maybe?
         let tabBarVC = MainViewController()
-        present(tabBarVC, animated: true)
-        print("info processed")
+        UIViewController.showViewController(viewController: tabBarVC)
     }
-    
     
     @IBAction func toggleAccountPressed(_ sender: UIButton) {
         
