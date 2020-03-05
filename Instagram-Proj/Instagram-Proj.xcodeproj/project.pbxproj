@@ -24,6 +24,8 @@
 		804E0900240EEAA300694496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 804E08FE240EEAA300694496 /* LaunchScreen.storyboard */; };
 		804E090B240EEAA400694496 /* Instagram_ProjTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E090A240EEAA400694496 /* Instagram_ProjTests.swift */; };
 		804E0922240EEEDF00694496 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804E0921240EEEDF00694496 /* GoogleService-Info.plist */; };
+		805D73FF24119A7800DC5BC4 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805D73FE24119A7800DC5BC4 /* FeedView.swift */; };
+		805D740124119D7200DC5BC4 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805D740024119D7200DC5BC4 /* FeedCell.xib */; };
 		80868E0A240EF29D001081C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80868E09240EF29D001081C4 /* MainViewController.swift */; };
 		80868E13240EF3AC001081C4 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80868E12240EF3AC001081C4 /* UserViewController.swift */; };
 		80EF51182410A98900119AB0 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF51172410A98900119AB0 /* FeedViewController.swift */; };
@@ -68,6 +70,8 @@
 		804E090A240EEAA400694496 /* Instagram_ProjTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instagram_ProjTests.swift; sourceTree = "<group>"; };
 		804E090C240EEAA400694496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		804E0921240EEEDF00694496 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		805D73FE24119A7800DC5BC4 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		805D740024119D7200DC5BC4 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		80868E09240EF29D001081C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		80868E12240EF3AC001081C4 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		80EF51172410A98900119AB0 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				8029DF11240EF5BD00753ADF /* ProfileView.swift */,
+				805D73FE24119A7800DC5BC4 /* FeedView.swift */,
 				8029DF15240EFA9700753ADF /* PostsCell.swift */,
+				805D740024119D7200DC5BC4 /* FeedCell.xib */,
 				8029DF13240EF5CB00753ADF /* ImagesView.swift */,
 			);
 			path = "Views+Cells";
@@ -290,6 +296,7 @@
 				804E0900240EEAA300694496 /* LaunchScreen.storyboard in Resources */,
 				804E08FD240EEAA300694496 /* Assets.xcassets in Resources */,
 				804E0922240EEEDF00694496 /* GoogleService-Info.plist in Resources */,
+				805D740124119D7200DC5BC4 /* FeedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +386,7 @@
 				8026A4BB240F144700E1C888 /* UIViewController+Alerts.swift in Sources */,
 				80868E0A240EF29D001081C4 /* MainViewController.swift in Sources */,
 				80EF51182410A98900119AB0 /* FeedViewController.swift in Sources */,
+				805D73FF24119A7800DC5BC4 /* FeedView.swift in Sources */,
 				804E08F4240EEAA200694496 /* AppDelegate.swift in Sources */,
 				8029DF0B240EF4F800753ADF /* ProfileViewController.swift in Sources */,
 				8029DF1E240F0A7E00753ADF /* UIViewControllers+Navigation.swift in Sources */,

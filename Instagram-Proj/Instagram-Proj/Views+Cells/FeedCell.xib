@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="feedCell" id="hug-TG-e5P">
+            <rect key="frame" x="0.0" y="0.0" width="299" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xqx-uc-cyd">
+                <rect key="frame" x="0.0" y="0.0" width="299" height="180"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-photo-gallery-101" translatesAutoresizingMaskIntoConstraints="NO" id="iRf-NA-4GT">
+                        <rect key="frame" x="8" y="8" width="283" height="108"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsH-LG-4qS">
+                        <rect key="frame" x="8" y="151" width="211" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.62222144930000001" green="0.81836440720000003" blue="0.63365361980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAA-az-RjV">
+                        <rect key="frame" x="8" y="124" width="283" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.99391596102172119" green="1" blue="0.94374437416914736" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="iRf-NA-4GT" secondAttribute="trailing" constant="8" id="0o7-hF-Pfw"/>
+                    <constraint firstItem="mAA-az-RjV" firstAttribute="top" secondItem="iRf-NA-4GT" secondAttribute="bottom" constant="8" id="2R0-pk-E3R"/>
+                    <constraint firstItem="iRf-NA-4GT" firstAttribute="top" secondItem="Xqx-uc-cyd" secondAttribute="top" constant="8" id="2gG-op-tGR"/>
+                    <constraint firstItem="mAA-az-RjV" firstAttribute="leading" secondItem="Xqx-uc-cyd" secondAttribute="leading" constant="8" id="745-8a-5oV"/>
+                    <constraint firstAttribute="trailing" secondItem="mAA-az-RjV" secondAttribute="trailing" constant="8" id="AKt-bA-q6x"/>
+                    <constraint firstAttribute="bottom" secondItem="hsH-LG-4qS" secondAttribute="bottom" constant="8" id="Eb1-Fe-hM3"/>
+                    <constraint firstItem="iRf-NA-4GT" firstAttribute="leading" secondItem="Xqx-uc-cyd" secondAttribute="leading" constant="8" id="FvS-yg-Tmd"/>
+                    <constraint firstItem="hsH-LG-4qS" firstAttribute="leading" secondItem="Xqx-uc-cyd" secondAttribute="leading" constant="8" id="Lej-i4-Eu3"/>
+                    <constraint firstAttribute="trailing" secondItem="hsH-LG-4qS" secondAttribute="trailing" constant="80" id="Qkv-EL-hKM"/>
+                    <constraint firstItem="iRf-NA-4GT" firstAttribute="height" secondItem="Xqx-uc-cyd" secondAttribute="height" multiplier="0.6" id="VND-m6-FAp"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="299" height="209"/>
+            <point key="canvasLocation" x="248.55072463768118" y="40.848214285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icons8-photo-gallery-101" width="100" height="100"/>
+    </resources>
+</document>

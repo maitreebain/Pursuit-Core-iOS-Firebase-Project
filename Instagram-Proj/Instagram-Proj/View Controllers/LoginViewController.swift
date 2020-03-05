@@ -93,7 +93,5 @@ class LoginViewController: UIViewController {
                 self.userAccountPromptButton.setTitle("Log in", for: .normal)
             }, completion: nil)
         }
-        
     }
-    
 }
