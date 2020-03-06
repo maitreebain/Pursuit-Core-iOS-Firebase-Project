@@ -19,8 +19,42 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        userPostCollection.delegate = self
+        userPostCollection.dataSource = self
+//        userPostCollection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "userPostCell")
     }
     
     
+    @IBAction func editProfPressed(_ sender: UIButton) {
+        let profVC = ProfileViewController()
+        present(profVC, animated: true)
+    }
+}
+
+extension UserViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemSpacing: CGFloat = 10
+        let maxWidth = UIScreen.main.bounds.size.width
+        let numberOfItems: CGFloat = 3
+        let totalSpace: CGFloat = numberOfItems * itemSpacing
+        let itemWidth: CGFloat = (maxWidth - totalSpace) / numberOfItems
+        
+        return CGSize(width: itemWidth, height: itemWidth)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 20, left: 8, bottom: 20, right: 8)
+    }
+}
+
+extension UserViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "userPostCell", for: indexPath)
+        return cell
+    }
 }

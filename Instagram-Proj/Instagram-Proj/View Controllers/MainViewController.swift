@@ -22,8 +22,9 @@ class MainViewController: UITabBarController {
         return viewController
     }()
     
-    private lazy var userViewController: ProfileViewController = {
-        let viewController = ProfileViewController()
+    private lazy var userViewController: UserViewController = {
+        let storyboard = UIStoryboard(name: "UserView", bundle: nil)
+        guard let viewController =  storyboard.instantiateViewController(identifier: "UserViewController") as? UserViewController else { return UserViewController()}
         viewController.tabBarItem = UITabBarItem(title: "Account Posts", image: UIImage(systemName: "photo.fill"), tag: 2)
         return viewController
     }()

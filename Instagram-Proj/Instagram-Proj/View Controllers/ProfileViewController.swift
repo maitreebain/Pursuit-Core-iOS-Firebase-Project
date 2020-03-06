@@ -21,6 +21,12 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    let profView = ProfView()
+    
+    override func loadView() {
+        view = profView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

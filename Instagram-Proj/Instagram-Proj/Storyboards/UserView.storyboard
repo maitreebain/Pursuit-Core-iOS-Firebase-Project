@@ -11,7 +11,7 @@
         <!--User View Controller-->
         <scene sceneID="jNh-RF-lcJ">
             <objects>
-                <viewController id="1pO-Km-pkX" customClass="UserViewController" customModule="Instagram_Proj" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserViewController" id="1pO-Km-pkX" customClass="UserViewController" customModule="Instagram_Proj" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cvB-fk-vyn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +55,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userPostCell" id="ndW-Vh-pDA">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userPostCell" id="ndW-Vh-pDA" customClass="PostsCell" customModule="Instagram_Proj" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="145" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QQP-sv-8uZ">
@@ -66,9 +66,18 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYa-x0-bKM">
+                                <rect key="frame" x="148" y="198" width="75" height="30"/>
+                                <state key="normal" title="Edit Profile"/>
+                                <connections>
+                                    <action selector="editProfPressed:" destination="1pO-Km-pkX" eventType="touchUpInside" id="eDp-u3-N5y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="LYa-x0-bKM" firstAttribute="leading" secondItem="GEX-YI-6Pr" secondAttribute="trailing" constant="8" id="7yU-qz-Unf"/>
+                            <constraint firstItem="8EQ-BL-t4U" firstAttribute="top" secondItem="LYa-x0-bKM" secondAttribute="bottom" constant="20" id="8OM-R4-l3B"/>
                             <constraint firstItem="m65-Sf-0hl" firstAttribute="leading" secondItem="GEX-YI-6Pr" secondAttribute="trailing" constant="8" id="Ee4-6U-9Pi"/>
                             <constraint firstItem="pXb-Tx-4fm" firstAttribute="top" secondItem="7pF-Nq-Mai" secondAttribute="bottom" constant="20" id="Y2N-Zc-sfV"/>
                             <constraint firstItem="7pF-Nq-Mai" firstAttribute="leading" secondItem="R3r-Xd-vuo" secondAttribute="leading" constant="20" id="bCF-XR-xMK"/>
@@ -92,7 +101,7 @@
                         <outlet property="collectionOptions" destination="7pF-Nq-Mai" id="gFu-to-nrb"/>
                         <outlet property="profileImage" destination="GEX-YI-6Pr" id="29b-DF-toA"/>
                         <outlet property="userName" destination="m65-Sf-0hl" id="v8b-VG-2Lg"/>
-                        <outlet property="userPostCollection" destination="pXb-Tx-4fm" id="1Db-KV-rgY"/>
+                        <outlet property="userPostCollection" destination="pXb-Tx-4fm" id="ah6-gM-nVZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hxh-gZ-nXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
