@@ -10,14 +10,16 @@ import UIKit
 
 //optional vc
 //pops up when people click on edit button
+/*
+
+ let profileView = ProfView()
+ 
+ override func loadView() {
+     view = profileView
+ }
+ */
 
 class ProfileViewController: UIViewController {
-
-    let profileView = ProfileView()
-    
-    override func loadView() {
-        view = profileView
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

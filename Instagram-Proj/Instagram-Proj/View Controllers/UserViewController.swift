@@ -9,4 +9,18 @@
 import UIKit
 
 class UserViewController: UIViewController {
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var collectionOptions: UISegmentedControl!
+    @IBOutlet weak var userPostCollection: UICollectionView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }
+    
+    
 }

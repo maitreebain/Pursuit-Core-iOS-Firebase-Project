@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileView: UIView {
+class ProfView: UIView {
     
     public lazy var userImage: UIImageView = {
         let iv = UIImageView()

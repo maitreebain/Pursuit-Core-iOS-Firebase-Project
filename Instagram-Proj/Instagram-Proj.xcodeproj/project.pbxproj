@@ -12,7 +12,7 @@
 		8029DF0B240EF4F800753ADF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029DF0A240EF4F800753ADF /* ProfileViewController.swift */; };
 		8029DF0D240EF52D00753ADF /* ImagePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029DF0C240EF52D00753ADF /* ImagePostViewController.swift */; };
 		8029DF0F240EF54500753ADF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029DF0E240EF54500753ADF /* LoginViewController.swift */; };
-		8029DF12240EF5BD00753ADF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029DF11240EF5BD00753ADF /* ProfileView.swift */; };
+		8029DF12240EF5BD00753ADF /* ProfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029DF11240EF5BD00753ADF /* ProfView.swift */; };
 		8029DF14240EF5CB00753ADF /* ImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029DF13240EF5CB00753ADF /* ImagesView.swift */; };
 		8029DF16240EFA9700753ADF /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029DF15240EFA9700753ADF /* PostsCell.swift */; };
 		8029DF19240EFD5400753ADF /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8029DF18240EFD5400753ADF /* LoginView.storyboard */; };
@@ -28,6 +28,7 @@
 		805D740124119D7200DC5BC4 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805D740024119D7200DC5BC4 /* FeedCell.xib */; };
 		805D74042411A90900DC5BC4 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805D74032411A90900DC5BC4 /* PostModel.swift */; };
 		805D74082411AC1A00DC5BC4 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805D74072411AC1A00DC5BC4 /* DatabaseService.swift */; };
+		805D740A2411C79D00DC5BC4 /* UserView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805D74092411C79D00DC5BC4 /* UserView.storyboard */; };
 		80868E0A240EF29D001081C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80868E09240EF29D001081C4 /* MainViewController.swift */; };
 		80868E13240EF3AC001081C4 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80868E12240EF3AC001081C4 /* UserViewController.swift */; };
 		80EF51182410A98900119AB0 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF51172410A98900119AB0 /* FeedViewController.swift */; };
@@ -56,7 +57,7 @@
 		8029DF0A240EF4F800753ADF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8029DF0C240EF52D00753ADF /* ImagePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePostViewController.swift; sourceTree = "<group>"; };
 		8029DF0E240EF54500753ADF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		8029DF11240EF5BD00753ADF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8029DF11240EF5BD00753ADF /* ProfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfView.swift; sourceTree = "<group>"; };
 		8029DF13240EF5CB00753ADF /* ImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesView.swift; sourceTree = "<group>"; };
 		8029DF15240EFA9700753ADF /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
 		8029DF18240EFD5400753ADF /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 		805D740024119D7200DC5BC4 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		805D74032411A90900DC5BC4 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		805D74072411AC1A00DC5BC4 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		805D74092411C79D00DC5BC4 /* UserView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserView.storyboard; sourceTree = "<group>"; };
 		80868E09240EF29D001081C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		80868E12240EF3AC001081C4 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		80EF51172410A98900119AB0 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +118,7 @@
 		8029DF10240EF58A00753ADF /* Views+Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8029DF11240EF5BD00753ADF /* ProfileView.swift */,
+				8029DF11240EF5BD00753ADF /* ProfView.swift */,
 				805D73FE24119A7800DC5BC4 /* FeedView.swift */,
 				8029DF15240EFA9700753ADF /* PostsCell.swift */,
 				805D740024119D7200DC5BC4 /* FeedCell.xib */,
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				8029DF18240EFD5400753ADF /* LoginView.storyboard */,
+				805D74092411C79D00DC5BC4 /* UserView.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				804E08FD240EEAA300694496 /* Assets.xcassets in Resources */,
 				804E0922240EEEDF00694496 /* GoogleService-Info.plist in Resources */,
 				805D740124119D7200DC5BC4 /* FeedCell.xib in Resources */,
+				805D740A2411C79D00DC5BC4 /* UserView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				805D74082411AC1A00DC5BC4 /* DatabaseService.swift in Sources */,
-				8029DF12240EF5BD00753ADF /* ProfileView.swift in Sources */,
+				8029DF12240EF5BD00753ADF /* ProfView.swift in Sources */,
 				8029DF0F240EF54500753ADF /* LoginViewController.swift in Sources */,
 				8029DF14240EF5CB00753ADF /* ImagesView.swift in Sources */,
 				8029DF1B240F072000753ADF /* DesignableView.swift in Sources */,
