@@ -173,30 +173,6 @@ class ProfView: UIView {
             return
         }
         
-        storageService.uploadPhoto(userID: user.uid, image: selectedImage) { [weak self] (result) in
-            switch result {
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self?.showAlert(title: "Error uploading photo", message: "\(error.localizedDescription)")
-                }
-            case .success(let url):
-                let request = Auth.auth().currentUser?.createProfileChangeRequest()
-                request?.displayName = displayName
-                request?.photoURL = url
-                //get kingfisher to update image in updateui
-                request?.commitChanges(completion: { [weak self] error in
-                    
-                    if let error = error {
-                        DispatchQueue.main.async {
-                            self?.showAlert(title: "Error updating profile", message: "Error changing profile error: \(error.localizedDescription)")
-                        }
-                    } else {
-                        DispatchQueue.main.async {
-                            self?.showAlert(title: "Profile Update", message: "Profile successfully updated")
-                        }
-                    }
-                })
-            }
-        }
+        //call storage here 
     }
 }
