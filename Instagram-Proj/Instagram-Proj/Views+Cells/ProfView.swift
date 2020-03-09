@@ -9,13 +9,20 @@
 import UIKit
 import FirebaseAuth
 
+protocol ProfViewDelegate: AnyObject {
+    func didUpdate(_ profView: ProfView, _ selectedImage: UIImage, _ userName: String,_ bioText: String)
+}
+
 class ProfView: UIView {
+    
+    weak var delegate: ProfViewDelegate?
     
     private let storageService = StorageService()
     
     public lazy var userImage: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "person.fill")
+        iv.isUserInteractionEnabled = true
         return iv
     }()
     
@@ -161,18 +168,12 @@ class ProfView: UIView {
     }
     
     @objc private func updateProfButtonPressed(_ sender: UIButton){
-        
-        guard let userName = userName.text, !userName.isEmpty, let selectedImage = selectedImage else {
-            print("missing fields")
-            return
-        }
-        
-        let resizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: userImage.bounds)
-        
-        guard let user = Auth.auth().currentUser else {
-            return
-        }
-        
-        //call storage here 
+    
+        guard let displayName = userName.text, !displayName.isEmpty, let selectedImage = selectedImage, let bioText = bioText.text, !bioText.isEmpty else {
+        print("missing fields")
+        return
     }
+        delegate?.didUpdate(self, selectedImage, displayName, bioText)
+    }
+    
 }

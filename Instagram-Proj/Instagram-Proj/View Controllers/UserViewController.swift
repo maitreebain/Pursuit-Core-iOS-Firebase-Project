@@ -9,6 +9,8 @@
 import UIKit
 import FirebaseFirestore
 
+//PROFVIEW DELEGATE IS NEEDED HERE
+
 class UserViewController: UIViewController {
     
     @IBOutlet weak var profileImage: UIImageView!
@@ -19,15 +21,24 @@ class UserViewController: UIViewController {
     
     private var listener: ListenerRegistration?
     
-//    private var instaPost = [PostModel]() {
-//        self.userPostCollection.reload
-    //}
+    private var instaPost = [PostModel]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.userPostCollection.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         userPostCollection.delegate = self
         userPostCollection.dataSource = self
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        listener = Firestore.firestore().
     }
     
     

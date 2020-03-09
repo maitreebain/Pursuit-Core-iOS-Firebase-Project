@@ -10,24 +10,22 @@ import UIKit
 import FirebaseAuth
 import Kingfisher
 
-//optional vc
-//pops up when people click on edit button
-/*
-
- let profileView = ProfView()
- 
- override func loadView() {
-     view = profileView
- }
- */
-
 class ProfileViewController: UIViewController {
     
     let profView = ProfView()
     
     override func loadView() {
         view = profView
+        profView.userImage.addGestureRecognizer(tapGesture)
+        profView.backgroundColor = .systemGroupedBackground
     }
+    
+    private lazy var tapGesture: UITapGestureRecognizer = {
+        let gesture = UITapGestureRecognizer()
+        gesture.addTarget(self, action: #selector(updateUserImage))
+        return gesture
+    }()
+    
     private lazy var imagePickerController: UIImagePickerController = {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -50,6 +48,28 @@ class ProfileViewController: UIViewController {
         
         profView.userImage.kf.setImage(with: user.photoURL)
     }
+    
+    @objc private func updateUserImage() {
+        let alertController = UIAlertController(title: "Choose photo option", message: nil, preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) {
+            alertAction in
+            self.imagePickerController.sourceType = .camera
+            self.present(self.imagePickerController, animated: true)
+        }
+        let photolibraryAction = UIAlertAction(title: "Photo Library", style: .default) {
+            alertAction in
+            self.imagePickerController.sourceType = .photoLibrary
+            self.present(self.imagePickerController, animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            alertController.addAction(cameraAction)
+        }
+        alertController.addAction(photolibraryAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
+    }
 }
 
 extension ProfileViewController: UITextFieldDelegate {
@@ -66,5 +86,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             return
         }
         profView.selectedImage = image
+        
     }
 }
+
