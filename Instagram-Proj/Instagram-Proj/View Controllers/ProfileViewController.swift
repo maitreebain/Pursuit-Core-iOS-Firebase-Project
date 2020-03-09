@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Kingfisher
 
 //optional vc
 //pops up when people click on edit button
@@ -26,12 +28,43 @@ class ProfileViewController: UIViewController {
     override func loadView() {
         view = profView
     }
+    private lazy var imagePickerController: UIImagePickerController = {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        return imagePicker
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        profView.userName.delegate = self
+        updateUI()
     }
     
+    func updateUI() {
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        profView.emailLabel.text = user.email
+        profView.userName.text = user.displayName
+        
+        profView.userImage.kf.setImage(with: user.photoURL)
+    }
+}
 
+extension ProfileViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
 
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            return
+        }
+        profView.selectedImage = image
+    }
 }

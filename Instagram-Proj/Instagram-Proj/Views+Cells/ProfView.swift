@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfView: UIView {
+    
+    private let storageService = StorageService()
     
     public lazy var userImage: UIImageView = {
         let iv = UIImageView()
@@ -20,8 +23,10 @@ class ProfView: UIView {
         let button = UIButton()
         button.setTitle("Update Profile", for: .normal)
         button.setTitleColor(.blue, for: .normal)
+        button.addTarget(self, action: #selector(updateProfButtonPressed(_:)), for: .touchUpInside)
         return button
     }()
+
     
     public lazy var userName: UITextField = {
         let text = UITextField()
@@ -51,6 +56,12 @@ class ProfView: UIView {
         button.setTitleColor(.systemRed, for: .normal)
         return button
     }()
+    
+    public var selectedImage: UIImage? {
+        didSet{
+            userImage.image = selectedImage
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -147,5 +158,45 @@ class ProfView: UIView {
             signOutButton.heightAnchor.constraint(equalToConstant: 44),
             signOutButton.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
+    }
+    
+    @objc private func updateProfButtonPressed(_ sender: UIButton){
+        
+        guard let userName = userName.text, !userName.isEmpty, let selectedImage = selectedImage else {
+            print("missing fields")
+            return
+        }
+        
+        let resizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: userImage.bounds)
+        
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        
+        storageService.uploadPhoto(userID: user.uid, image: selectedImage) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error uploading photo", message: "\(error.localizedDescription)")
+                }
+            case .success(let url):
+                let request = Auth.auth().currentUser?.createProfileChangeRequest()
+                request?.displayName = displayName
+                request?.photoURL = url
+                //get kingfisher to update image in updateui
+                request?.commitChanges(completion: { [weak self] error in
+                    
+                    if let error = error {
+                        DispatchQueue.main.async {
+                            self?.showAlert(title: "Error updating profile", message: "Error changing profile error: \(error.localizedDescription)")
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self?.showAlert(title: "Profile Update", message: "Profile successfully updated")
+                        }
+                    }
+                })
+            }
+        }
     }
 }
