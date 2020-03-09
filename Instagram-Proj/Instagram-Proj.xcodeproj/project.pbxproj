@@ -32,6 +32,7 @@
 		805D740A2411C79D00DC5BC4 /* UserView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805D74092411C79D00DC5BC4 /* UserView.storyboard */; };
 		805EA54D24165BDF0011B479 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA54C24165BDF0011B479 /* UIImage+Extensions.swift */; };
 		805EA54F24165D210011B479 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA54E24165D210011B479 /* StorageService.swift */; };
+		807B072D2416D9CD000C1A3D /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B072C2416D9CD000C1A3D /* EmptyView.swift */; };
 		80868E0A240EF29D001081C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80868E09240EF29D001081C4 /* MainViewController.swift */; };
 		80868E13240EF3AC001081C4 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80868E12240EF3AC001081C4 /* UserViewController.swift */; };
 		80EF51182410A98900119AB0 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF51172410A98900119AB0 /* FeedViewController.swift */; };
@@ -83,6 +84,7 @@
 		805D74092411C79D00DC5BC4 /* UserView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserView.storyboard; sourceTree = "<group>"; };
 		805EA54C24165BDF0011B479 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		805EA54E24165D210011B479 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		807B072C2416D9CD000C1A3D /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		80868E09240EF29D001081C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		80868E12240EF3AC001081C4 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		80EF51172410A98900119AB0 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				8029DF15240EFA9700753ADF /* PostsCell.swift */,
 				805D740024119D7200DC5BC4 /* FeedCell.xib */,
 				8029DF13240EF5CB00753ADF /* ImagesView.swift */,
+				807B072C2416D9CD000C1A3D /* EmptyView.swift */,
 			);
 			path = "Views+Cells";
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				8029DF16240EFA9700753ADF /* PostsCell.swift in Sources */,
 				805EA54D24165BDF0011B479 /* UIImage+Extensions.swift in Sources */,
 				80868E13240EF3AC001081C4 /* UserViewController.swift in Sources */,
+				807B072D2416D9CD000C1A3D /* EmptyView.swift in Sources */,
 				8026A4B9240F0CEE00E1C888 /* AuthenticationSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

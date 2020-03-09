@@ -16,8 +16,7 @@ class ProfileViewController: UIViewController {
     
     override func loadView() {
         view = profView
-        profView.userImage.addGestureRecognizer(tapGesture)
-        profView.backgroundColor = .systemGroupedBackground
+        
     }
     
     private lazy var tapGesture: UITapGestureRecognizer = {
@@ -34,9 +33,20 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        profView.userImage.addGestureRecognizer(tapGesture)
+        profView.updateProfButton.addTarget(self, action: #selector(updateProf(_:)), for: .touchUpInside)
         
+        profView.backgroundColor = .systemGroupedBackground
         profView.userName.delegate = self
         updateUI()
+    }
+    
+    @objc private func updateProf(_ sender: UIButton){
+        guard let displayName = profView.userName.text, !displayName.isEmpty, let selectedImage = profView.selectedImage, let bioText = profView.bioText.text, !bioText.isEmpty else {
+            print("missing fields")
+            return
+        }
+        print("hello")
     }
     
     func updateUI() {
@@ -86,7 +96,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             return
         }
         profView.selectedImage = image
-        
     }
 }
+
 

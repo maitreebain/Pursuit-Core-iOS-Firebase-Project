@@ -9,13 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-protocol ProfViewDelegate: AnyObject {
-    func didUpdate(_ profView: ProfView, _ selectedImage: UIImage, _ userName: String,_ bioText: String)
-}
-
 class ProfView: UIView {
-    
-    weak var delegate: ProfViewDelegate?
     
     private let storageService = StorageService()
     
@@ -30,7 +24,6 @@ class ProfView: UIView {
         let button = UIButton()
         button.setTitle("Update Profile", for: .normal)
         button.setTitleColor(.blue, for: .normal)
-        button.addTarget(self, action: #selector(updateProfButtonPressed(_:)), for: .touchUpInside)
         return button
     }()
 
@@ -166,14 +159,5 @@ class ProfView: UIView {
             signOutButton.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
-    
-    @objc private func updateProfButtonPressed(_ sender: UIButton){
-    
-        guard let displayName = userName.text, !displayName.isEmpty, let selectedImage = selectedImage, let bioText = bioText.text, !bioText.isEmpty else {
-        print("missing fields")
-        return
-    }
-        delegate?.didUpdate(self, selectedImage, displayName, bioText)
-    }
-    
+
 }

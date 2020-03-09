@@ -26,6 +26,11 @@ class UserViewController: UIViewController {
             DispatchQueue.main.async {
                 self.userPostCollection.reloadData()
             }
+            if instaPost.isEmpty {
+                self.userPostCollection.backgroundView = EmptyView(title: "No Posts Available", message: "Consider making a post!")
+            } else {
+                self.userPostCollection.backgroundView = nil
+            }
         }
     }
     
@@ -44,7 +49,7 @@ class UserViewController: UIViewController {
     
     @IBAction func editProfPressed(_ sender: UIButton) {
         let profVC = ProfileViewController()
-        present(profVC, animated: true)
+        navigationController?.pushViewController(profVC, animated: true)
     }
 }
 
