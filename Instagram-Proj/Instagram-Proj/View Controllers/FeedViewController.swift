@@ -12,6 +12,8 @@ class FeedViewController: UIViewController {
     
     private let feedView = FeedView()
     
+    //listener here
+    
     override func loadView() {
         view = feedView
     }

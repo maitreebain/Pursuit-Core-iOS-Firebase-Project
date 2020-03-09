@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
         view = profView
         
     }
+    private let storageService = StorageService()
     
     private lazy var tapGesture: UITapGestureRecognizer = {
         let gesture = UITapGestureRecognizer()
@@ -43,10 +44,43 @@ class ProfileViewController: UIViewController {
     
     @objc private func updateProf(_ sender: UIButton){
         guard let displayName = profView.userName.text, !displayName.isEmpty, let selectedImage = profView.selectedImage, let bioText = profView.bioText.text, !bioText.isEmpty else {
-            print("missing fields")
+            self.showAlert(title: "Missing Fields", message: "Please check all fields")
             return
         }
-        print("hello")
+        let resizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: profView.userImage.bounds)
+        
+        print("orig \(selectedImage.size) not orig \(resizedImage)")
+        
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        
+        storageService.uploadImage(userID: user.uid, image: resizedImage) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error uploading photo", message: "\(error.localizedDescription)")
+                    print("\(error.localizedDescription)")
+                }
+            case .success(let url):
+                let request = Auth.auth().currentUser?.createProfileChangeRequest()
+                request?.displayName = displayName
+                request?.photoURL = url
+                request?.commitChanges(completion: { [weak self] error in
+                    
+                    if let error = error {
+                        DispatchQueue.main.async {
+                            self?.showAlert(title: "Error updating profile", message: "Error changing profile error: \(error.localizedDescription)")
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self?.showAlert(title: "Profile Update", message: "Profile successfully updated")
+                        }
+                    }
+                })
+            }
+        }
+        
     }
     
     func updateUI() {
@@ -96,7 +130,8 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             return
         }
         profView.selectedImage = image
-    }
+        dismiss(animated: true)
+    } 
 }
 
 

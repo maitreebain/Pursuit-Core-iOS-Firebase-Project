@@ -8,8 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
-
-//PROFVIEW DELEGATE IS NEEDED HERE
+import FirebaseAuth
 
 class UserViewController: UIViewController {
     
@@ -18,8 +17,6 @@ class UserViewController: UIViewController {
     @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var collectionOptions: UISegmentedControl!
     @IBOutlet weak var userPostCollection: UICollectionView!
-    
-    private var listener: ListenerRegistration?
     
     private var instaPost = [PostModel]() {
         didSet {
@@ -43,7 +40,11 @@ class UserViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-//        listener = Firestore.firestore().
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        
+        userName.text = user.displayName
     }
     
     
