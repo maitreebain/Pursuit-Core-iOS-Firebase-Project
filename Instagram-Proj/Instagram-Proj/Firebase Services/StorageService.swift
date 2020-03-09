@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import FirebaseSto
+import FirebaseStorage
 
 class StorageService {
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class UserViewController: UIViewController {
     
@@ -16,12 +17,17 @@ class UserViewController: UIViewController {
     @IBOutlet weak var collectionOptions: UISegmentedControl!
     @IBOutlet weak var userPostCollection: UICollectionView!
     
+    private var listener: ListenerRegistration?
+    
+//    private var instaPost = [PostModel]() {
+//        self.userPostCollection.reload
+    //}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         userPostCollection.delegate = self
         userPostCollection.dataSource = self
-//        userPostCollection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "userPostCell")
     }
     
     
