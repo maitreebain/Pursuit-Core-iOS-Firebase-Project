@@ -97,7 +97,7 @@ class ImagePostViewController: UIViewController {
     }
     
     private func updateImageURL(imageURL: URL, postID: String) {
-        Firestore.firestore().collection(DatabaseService.userPost).document(postID).updateData(["postImageURL" : imageURL.absoluteURL]) { [weak self] (error) in
+        Firestore.firestore().collection(DatabaseService.userPost).document(postID).updateData(["imageURL":imageURL.absoluteString]) { [weak self] (error) in
             
             if let error = error {
                 DispatchQueue.main.async {
