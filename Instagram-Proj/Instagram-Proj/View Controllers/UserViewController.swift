@@ -45,6 +45,7 @@ class UserViewController: UIViewController {
         }
         
         userName.text = user.displayName
+        profileImage.kf.setImage(with: user.photoURL)
     }
     
     

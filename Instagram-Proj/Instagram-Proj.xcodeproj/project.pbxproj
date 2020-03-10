@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		802524162417A73800E542F4 /* ImagePostView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 802524152417A73800E542F4 /* ImagePostView.storyboard */; };
 		8026A4B9240F0CEE00E1C888 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026A4B8240F0CEE00E1C888 /* AuthenticationSession.swift */; };
 		8026A4BB240F144700E1C888 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026A4BA240F144700E1C888 /* UIViewController+Alerts.swift */; };
 		8029DF0B240EF4F800753ADF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029DF0A240EF4F800753ADF /* ProfileViewController.swift */; };
@@ -56,6 +57,7 @@
 		1C02ABBD5161145EF3CA4393 /* Pods-Instagram-Proj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-Proj.release.xcconfig"; path = "Target Support Files/Pods-Instagram-Proj/Pods-Instagram-Proj.release.xcconfig"; sourceTree = "<group>"; };
 		5B68EB0B167340173A92EFC9 /* Pods_Instagram_ProjTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram_ProjTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6555D7244326C1DFA4F9FBD1 /* Pods-Instagram-ProjTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-ProjTests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram-ProjTests/Pods-Instagram-ProjTests.debug.xcconfig"; sourceTree = "<group>"; };
+		802524152417A73800E542F4 /* ImagePostView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImagePostView.storyboard; sourceTree = "<group>"; };
 		8026A4B8240F0CEE00E1C888 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
 		8026A4BA240F144700E1C888 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		8029DF0A240EF4F800753ADF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				8029DF18240EFD5400753ADF /* LoginView.storyboard */,
 				805D74092411C79D00DC5BC4 /* UserView.storyboard */,
+				802524152417A73800E542F4 /* ImagePostView.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				804E08FD240EEAA300694496 /* Assets.xcassets in Resources */,
 				804E0922240EEEDF00694496 /* GoogleService-Info.plist in Resources */,
 				805D740124119D7200DC5BC4 /* FeedCell.xib in Resources */,
+				802524162417A73800E542F4 /* ImagePostView.storyboard in Resources */,
 				805D740A2411C79D00DC5BC4 /* UserView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image Post View Controller-->
+        <scene sceneID="iK1-Mc-R5b">
+            <objects>
+                <viewController storyboardIdentifier="ImagePostViewController" id="CFv-Hr-G5V" customClass="ImagePostViewController" customModule="Instagram_Proj" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D8v-Ov-1mv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-hW-jUr" customClass="DesignableImageView" customModule="Instagram_Proj" customModuleProvider="target">
+                                <rect key="frame" x="20" y="105" width="374" height="371.5"/>
+                                <color key="tintColor" red="0.58596866560000005" green="0.8469573641" blue="0.69335813049999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rpe-hW-jUr" secondAttribute="height" multiplier="1:1" id="yS2-4F-dxJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVm-ob-Mwc" customClass="DesignableButton" customModule="Instagram_Proj" customModuleProvider="target">
+                                <rect key="frame" x="20" y="618" width="140" height="44"/>
+                                <color key="backgroundColor" red="0.39436031770000002" green="0.80454147949999999" blue="0.84708121830000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="Sov-6x-M6j"/>
+                                    <constraint firstAttribute="height" constant="44" id="h3a-EQ-1bk"/>
+                                </constraints>
+                                <state key="normal" title="Photo Library">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="photoLibraryPressed:" destination="CFv-Hr-G5V" eventType="touchUpInside" id="xib-8r-w1r"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxf-mX-zJR" customClass="DesignableButton" customModule="Instagram_Proj" customModuleProvider="target">
+                                <rect key="frame" x="254" y="618" width="140" height="44"/>
+                                <color key="backgroundColor" red="0.39436031770000002" green="0.80454147949999999" blue="0.84708121830000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="dKf-Z7-JUZ"/>
+                                    <constraint firstAttribute="height" constant="44" id="uHf-Ox-FDy"/>
+                                </constraints>
+                                <state key="normal" title="Camera">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraPressed:" destination="CFv-Hr-G5V" eventType="touchUpInside" id="e0Q-GM-iKT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter description here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8c8-IX-X2l">
+                                <rect key="frame" x="20" y="518" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="EdI-Ds-kj9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RVm-ob-Mwc" firstAttribute="leading" secondItem="H76-K8-Nbi" secondAttribute="leading" constant="20" id="CvO-kF-Fwn"/>
+                            <constraint firstItem="rpe-hW-jUr" firstAttribute="leading" secondItem="H76-K8-Nbi" secondAttribute="leading" constant="20" id="EEH-ER-Ylh"/>
+                            <constraint firstItem="mxf-mX-zJR" firstAttribute="top" secondItem="rpe-hW-jUr" secondAttribute="bottom" constant="140" id="EgK-LO-1YC"/>
+                            <constraint firstItem="rpe-hW-jUr" firstAttribute="top" secondItem="H76-K8-Nbi" secondAttribute="top" constant="60" id="IOm-QA-CZ5"/>
+                            <constraint firstItem="H76-K8-Nbi" firstAttribute="trailing" secondItem="mxf-mX-zJR" secondAttribute="trailing" constant="20" id="K4w-2h-9Z3"/>
+                            <constraint firstItem="RVm-ob-Mwc" firstAttribute="centerY" secondItem="mxf-mX-zJR" secondAttribute="centerY" id="KbW-s4-gl8"/>
+                            <constraint firstItem="H76-K8-Nbi" firstAttribute="trailing" secondItem="rpe-hW-jUr" secondAttribute="trailing" constant="20" id="SFA-NJ-9Kt"/>
+                            <constraint firstItem="8c8-IX-X2l" firstAttribute="top" secondItem="rpe-hW-jUr" secondAttribute="bottom" constant="40" id="XfX-JF-zkR"/>
+                            <constraint firstItem="H76-K8-Nbi" firstAttribute="trailing" secondItem="8c8-IX-X2l" secondAttribute="trailing" constant="20" id="Ygy-IO-88K"/>
+                            <constraint firstItem="8c8-IX-X2l" firstAttribute="leading" secondItem="H76-K8-Nbi" secondAttribute="leading" constant="20" id="fDP-c7-eS9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H76-K8-Nbi"/>
+                    </view>
+                    <connections>
+                        <outlet property="postDescript" destination="8c8-IX-X2l" id="sg1-H7-vUv"/>
+                        <outlet property="postImage" destination="rpe-hW-jUr" id="FTo-pr-ayG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C3t-xT-B3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49.275362318840585" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo.fill" catalog="system" width="64" height="46"/>
+    </resources>
+</document>

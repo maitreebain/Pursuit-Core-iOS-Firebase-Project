@@ -17,7 +17,8 @@ class MainViewController: UITabBarController {
     }()
     
     private lazy var imagePostViewController: ImagePostViewController = {
-        let viewController = ImagePostViewController()
+        let storyboard = UIStoryboard(name: "ImagePostView", bundle: nil)
+        guard let viewController =  storyboard.instantiateViewController(identifier: "ImagePostViewController") as? ImagePostViewController else { return ImagePostViewController()}
         viewController.tabBarItem = UITabBarItem(title: "Camera", image: UIImage(systemName: "camera.circle.fill"), tag: 1)
         return viewController
     }()
