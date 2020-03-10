@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class FeedViewController: UIViewController {
     
     private let feedView = FeedView()
     
-    //listener here
+    private var listener: ListenerRegistration?
+    private var databaseService = DatabaseService()
+    
+    private var posts = [PostModel]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.feedView.collectionView.reloadData()
+            }
+        }
+    }
     
     override func loadView() {
         view = feedView
@@ -26,30 +37,53 @@ class FeedViewController: UIViewController {
         feedView.collectionView.register(UINib(nibName: "FeedCell", bundle: nil), forCellWithReuseIdentifier: "feedCell")
     }
 
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        listener = Firestore.firestore().collection(DatabaseService.userPost).addSnapshotListener({ [weak self] (snapshot, error) in
+            
+            if let error = error {
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Firestore Error", message: "\(error.localizedDescription)")
+                }
+            } else if let snapshot = snapshot {
+                let posts = snapshot.documents.map { PostModel($0.data())}
+                self?.posts = posts
+            }
+        })
+    }
 }
 
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let interItemSpacing: CGFloat = 10
+            let itemSpacing: CGFloat = 1
             let maxWidth = UIScreen.main.bounds.size.width
             let numberOfItems: CGFloat = 1
-            let totalSpacing: CGFloat = numberOfItems * interItemSpacing
-            let itemWidth: CGFloat = (maxWidth - totalSpacing) / numberOfItems
+            let totalSpace: CGFloat = numberOfItems * itemSpacing
+            let itemWidth: CGFloat = (maxWidth - totalSpace) / numberOfItems
             
             return CGSize(width: itemWidth, height: itemWidth)
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 8, left: 20, bottom: 20, right: 20)
+//    }
 }
 
 extension FeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath) as? FeedCell else {
+            fatalError("could not downcast to FeedCell")
+        }
+        let post = posts[indexPath.row]
+        cell.configureCell(for: post)
         
-        cell.backgroundColor = .yellow
         return cell
     }
 }

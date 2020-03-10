@@ -14,7 +14,7 @@ class FeedView: UIView {
        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        cv.backgroundColor = .blue
+        cv.backgroundColor = #colorLiteral(red: 0.9318144321, green: 0.6739220023, blue: 0.7504851818, alpha: 1)
         return cv
     }()
     
