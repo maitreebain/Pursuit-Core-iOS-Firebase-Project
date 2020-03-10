@@ -35,7 +35,7 @@ class ProfView: UIView {
         text.placeholder = "Enter a display name"
         text.textAlignment = .center
         text.backgroundColor = .white
-        text.layer.cornerRadius = 10
+        text.layer.cornerRadius = 4
         return text
     }()
     
@@ -92,8 +92,8 @@ class ProfView: UIView {
         NSLayoutConstraint.activate([
             userImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             userImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            userImage.widthAnchor.constraint(equalToConstant: 60),
-            userImage.heightAnchor.constraint(equalToConstant: 100)
+            userImage.widthAnchor.constraint(equalToConstant: 120),
+            userImage.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
     

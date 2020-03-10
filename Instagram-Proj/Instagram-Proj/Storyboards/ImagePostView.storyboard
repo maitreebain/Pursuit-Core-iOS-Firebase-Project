@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-hW-jUr" customClass="DesignableImageView" customModule="Instagram_Proj" customModuleProvider="target">
-                                <rect key="frame" x="20" y="105" width="374" height="371.5"/>
+                                <rect key="frame" x="20" y="149" width="374" height="371.5"/>
                                 <color key="tintColor" red="0.58596866560000005" green="0.8469573641" blue="0.69335813049999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rpe-hW-jUr" secondAttribute="height" multiplier="1:1" id="yS2-4F-dxJ"/>
@@ -28,7 +28,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVm-ob-Mwc" customClass="DesignableButton" customModule="Instagram_Proj" customModuleProvider="target">
-                                <rect key="frame" x="20" y="618" width="140" height="44"/>
+                                <rect key="frame" x="20" y="666" width="140" height="44"/>
                                 <color key="backgroundColor" red="0.39436031770000002" green="0.80454147949999999" blue="0.84708121830000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="Sov-6x-M6j"/>
@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxf-mX-zJR" customClass="DesignableButton" customModule="Instagram_Proj" customModuleProvider="target">
-                                <rect key="frame" x="254" y="618" width="140" height="44"/>
+                                <rect key="frame" x="254" y="666" width="140" height="44"/>
                                 <color key="backgroundColor" red="0.39436031770000002" green="0.80454147949999999" blue="0.84708121830000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="dKf-Z7-JUZ"/>
@@ -66,35 +66,77 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter description here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8c8-IX-X2l">
-                                <rect key="frame" x="20" y="518" width="374" height="44"/>
+                                <rect key="frame" x="20" y="562" width="374" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="EdI-Ds-kj9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJC-FU-Ihg" customClass="DesignableButton" customModule="Instagram_Proj" customModuleProvider="target">
+                                <rect key="frame" x="102" y="740" width="210" height="44"/>
+                                <color key="backgroundColor" red="0.89308375630000003" green="0.68453630399999998" blue="0.74898414520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="5M4-uc-7Wl"/>
+                                    <constraint firstAttribute="height" constant="44" id="IRL-WZ-CP2"/>
+                                </constraints>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="makePostButtonPressed:" destination="CFv-Hr-G5V" eventType="touchUpInside" id="Khh-EJ-s1R"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="cJC-FU-Ihg" firstAttribute="centerX" secondItem="8c8-IX-X2l" secondAttribute="centerX" id="1tg-8j-Fzi"/>
                             <constraint firstItem="RVm-ob-Mwc" firstAttribute="leading" secondItem="H76-K8-Nbi" secondAttribute="leading" constant="20" id="CvO-kF-Fwn"/>
                             <constraint firstItem="rpe-hW-jUr" firstAttribute="leading" secondItem="H76-K8-Nbi" secondAttribute="leading" constant="20" id="EEH-ER-Ylh"/>
-                            <constraint firstItem="mxf-mX-zJR" firstAttribute="top" secondItem="rpe-hW-jUr" secondAttribute="bottom" constant="140" id="EgK-LO-1YC"/>
                             <constraint firstItem="rpe-hW-jUr" firstAttribute="top" secondItem="H76-K8-Nbi" secondAttribute="top" constant="60" id="IOm-QA-CZ5"/>
                             <constraint firstItem="H76-K8-Nbi" firstAttribute="trailing" secondItem="mxf-mX-zJR" secondAttribute="trailing" constant="20" id="K4w-2h-9Z3"/>
                             <constraint firstItem="RVm-ob-Mwc" firstAttribute="centerY" secondItem="mxf-mX-zJR" secondAttribute="centerY" id="KbW-s4-gl8"/>
+                            <constraint firstItem="cJC-FU-Ihg" firstAttribute="top" secondItem="RVm-ob-Mwc" secondAttribute="bottom" constant="30" id="Ovb-rO-OK3"/>
                             <constraint firstItem="H76-K8-Nbi" firstAttribute="trailing" secondItem="rpe-hW-jUr" secondAttribute="trailing" constant="20" id="SFA-NJ-9Kt"/>
                             <constraint firstItem="8c8-IX-X2l" firstAttribute="top" secondItem="rpe-hW-jUr" secondAttribute="bottom" constant="40" id="XfX-JF-zkR"/>
                             <constraint firstItem="H76-K8-Nbi" firstAttribute="trailing" secondItem="8c8-IX-X2l" secondAttribute="trailing" constant="20" id="Ygy-IO-88K"/>
                             <constraint firstItem="8c8-IX-X2l" firstAttribute="leading" secondItem="H76-K8-Nbi" secondAttribute="leading" constant="20" id="fDP-c7-eS9"/>
+                            <constraint firstItem="mxf-mX-zJR" firstAttribute="top" secondItem="8c8-IX-X2l" secondAttribute="bottom" constant="60" id="noz-Wa-hdl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H76-K8-Nbi"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Kec-gq-PQO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="postDescript" destination="8c8-IX-X2l" id="sg1-H7-vUv"/>
                         <outlet property="postImage" destination="rpe-hW-jUr" id="FTo-pr-ayG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C3t-xT-B3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860.86956521739137" y="88.392857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GGr-Eb-WCc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BGQ-wz-5Ft" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FgO-Dq-B0m">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CFv-Hr-G5V" kind="relationship" relationship="rootViewController" id="MUf-zr-gDo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bc-uW-CRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-49.275362318840585" y="88.392857142857139"/>
         </scene>
