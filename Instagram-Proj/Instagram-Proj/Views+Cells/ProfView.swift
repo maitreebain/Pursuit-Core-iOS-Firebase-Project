@@ -17,6 +17,8 @@ class ProfView: UIView {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "person.fill")
         iv.isUserInteractionEnabled = true
+        iv.contentMode = .scaleAspectFill
+        iv.alpha = 0.6
         return iv
     }()
     
@@ -90,7 +92,7 @@ class ProfView: UIView {
         NSLayoutConstraint.activate([
             userImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             userImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            userImage.widthAnchor.constraint(equalToConstant: 100),
+            userImage.widthAnchor.constraint(equalToConstant: 60),
             userImage.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
@@ -117,7 +119,6 @@ class ProfView: UIView {
             updateProfButton.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 8),
             updateProfButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
             updateProfButton.heightAnchor.constraint(equalToConstant: 44),
-            updateProfButton.widthAnchor.constraint(equalToConstant: 120),
             updateProfButton.centerXAnchor.constraint(equalTo: userName.centerXAnchor)
         ])
     }
